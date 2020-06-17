@@ -1,10 +1,9 @@
-from .Deck import *
-from .Matrice_generator import *
-from .Boundary_conditions import *
-from .Initial_conditions import *
-from .Solve import *
-from .Draw_temperature import *
-from .Calculate_deformation import *
-from .Draw_deformation import *
-
+from .data import *
+from .generate_matrix import *
+from .apply_boundary_conditions import *
+from .initialise_conditions import *
+from .solve import *
+from .draw_temperature import *
+from .calculate_deformation import *
+from .draw_deformation import *
 
