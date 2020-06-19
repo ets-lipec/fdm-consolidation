@@ -1,21 +1,21 @@
 import numpy as np
 
-class Matrice_Generates:
+class Matrix_Generation:
     
-    def __init_(self, deck):
+    def __init__(self, deck):
         
         self.deck = deck
-        self.do_matrice()
+        self.do_matrix()
         
     
-    def do_matrice(self):
+    def do_matrix(self):
         
-        self.lenX = float(deck.doc["Simulation"]["lenX"])
-        self.dx =  float(deck.doc["Simulation"]["dx"])             
-        self.nx =int(self.lenX/self.dx)
-        self.k =  deck.doc["Materials"]["Mechanical"]["Thermal conductivity"]
-        self.rho = float(deck.doc["Materials"]["Mechanical"]["Density"])
-        self.Cp = float(deck.doc["Materials"]["Thermal"]["Heat Capacity"])
+        self.lenX = float(self.deck.doc["Simulation"]["lenX"])
+        self.dx =  float(self.deck.doc["Simulation"]["dx"])             
+        self.nx =int(self.lenX/self.dx)+1
+        self.k =  float(self.deck.doc["Materials"]["Thermal"]["Thermal Conductivity"])
+        self.rho = float(self.deck.doc["Materials"]["Mechanical"]["Density"])
+        self.Cp = float(self.deck.doc["Materials"]["Thermal"]["Heat Capacity"])
         self.D = self.k/(self.rho*self.Cp)
         self.dt = float(self.rho*self.Cp*self.dx**2/(2*self.k*10))              
         self.C1=self.dt*self.D/self.dx**2
