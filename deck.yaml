@@ -11,11 +11,12 @@ Experimental Conditions:
   Extrusion Temperature: 453
   Bed Temperature: 338
   Room Temperature: 295
+  Layer Thickness: 0.0008
+  Number of Layers: 3
 
 Simulation:
-  dx: 0.0002
-  lenX: 0.0008
-  time: 20
+  number of intervals per layer: 2
+  time per layer: 20
   Vcooling: 5
   time2: 10
 

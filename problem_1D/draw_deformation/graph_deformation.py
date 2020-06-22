@@ -12,7 +12,7 @@ class Graph_Deformation():
         
     def do_graph(self):
         
-        self.t = np.linspace(0,(self.solution.nt+self.solution.nt1+self.solution.nt2)*self.matrix_generation.dt,self.solution.nt+self.solution.nt1+self.solution.nt2+1)
+        self.t = np.linspace(0,(self.matrix_generation.nlay*self.solution.nt+self.solution.nt1+self.solution.nt2)*self.matrix_generation.dt,self.matrix_generation.nlay*self.solution.nt+self.solution.nt1+self.solution.nt2+1)
         fig = plt.figure()
         axes = fig.add_subplot(1,1,1)
         axes.plot(self.t,self.deformation_calculation.Eps)
