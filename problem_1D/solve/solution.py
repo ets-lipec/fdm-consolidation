@@ -8,18 +8,26 @@ class Solution:
         self.matrix_generation = matrix_generation
         self.initial_conditions = initial_conditions
         self.boundary_conditions = boundary_conditions
-        self.hot_bed()
+        self.multiple_layers()
         self.bed_cooling()
         self.cold_bed()
-    
-    def hot_bed(self):
+
+    def multiple_layers(self):
         
-        self.nt = int(float(self.deck.doc["Simulation"]["time"])/self.matrix_generation.dt)
-        self.Ttot = self.initial_conditions.T
-        for t in range (self.nt):
-            self.initial_conditions.T = np.dot(self.matrix_generation.M,self.initial_conditions.T)+self.boundary_conditions.Vamb
-            self.Ttot = np.append(self.Ttot,self.initial_conditions.T,axis=1)
-    
+        self.nt = int(float(self.deck.doc["Simulation"]["time per layer"])/self.matrix_generation.dt)
+        for i in range (1,self.matrix_generation.nlay+1):
+            self.matrix_generation.do_matrix(i)
+            self.boundary_conditions.Dirichlet()
+            self.boundary_conditions.Neumann()
+            if i == 1:
+                self.initial_conditions.initialise_vector_temperature()
+                self.Ttot = self.initial_conditions.T
+            else:
+                self.initial_conditions.adjust_vector_temperature(self.initial_conditions.T)
+            for t in range (self.nt):
+                self.initial_conditions.T = np.dot(self.matrix_generation.M,self.initial_conditions.T)+self.boundary_conditions.Vamb
+                self.Ttot = np.append(self.Ttot,self.initial_conditions.T,axis=1)
+            
     def bed_cooling(self):
         
         Vcooling = float(self.deck.doc["Simulation"]["Vcooling"])
