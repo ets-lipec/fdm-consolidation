@@ -17,8 +17,8 @@ initial_conditions = Initial_Conditions(deck, matrix_generation)
 
 solution = Solution(deck, matrix_generation, initial_conditions, boundary_conditions)
 
-graph_temperature = Graph_Temperature(matrix_generation, solution)
+graph_temperature = Graph_Temperature(matrix_generation, boundary_conditions, solution)
 
-deformation_calculation = Deformation_Calculation(deck, matrix_generation, initial_conditions, solution)
+#deformation_calculation = Deformation_Calculation(deck, matrix_generation, initial_conditions, solution)
 
-graph_deformation = Graph_Deformation(matrix_generation, solution, deformation_calculation)
+#graph_deformation = Graph_Deformation(matrix_generation, solution, deformation_calculation)
