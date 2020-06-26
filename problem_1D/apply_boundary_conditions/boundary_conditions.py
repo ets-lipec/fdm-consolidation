@@ -18,8 +18,8 @@ class Boundary_Conditions:
         
     def Neumann(self):
         
-        h = float(self.deck.doc["Materials"]["Thermal"]["Heat Transfer Coefficient"] )        
-        C2  = 2*h*self.matrix_generation.dx/self.matrix_generation.k
+        self.h = float(self.deck.doc["Materials"]["Thermal"]["Heat Transfer Coefficient"] )        
+        C2  = 2*self.h*self.matrix_generation.dx/self.matrix_generation.k
         self.Troom = float(self.deck.doc["Experimental Conditions"]["Room Temperature"] )
         Vnx = np.zeros((1,self.matrix_generation.nxlay))
         Vnx[0,self.matrix_generation.nxi-2] = 2*self.matrix_generation.C1
