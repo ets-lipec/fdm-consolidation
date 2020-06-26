@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-class Graph_Deformation():
+class Graph_Deformation:
     
     def __init__(self, matrix_generation, solution, deformation_calculation):
         
