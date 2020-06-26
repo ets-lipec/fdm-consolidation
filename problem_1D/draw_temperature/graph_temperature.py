@@ -12,13 +12,13 @@ class Graph_Temperature:
     
     def do_graph(self):
         
-        self.t = np.linspace(0,(self.matrix_generation.nlay*self.solution.nt+self.solution.nt1+self.solution.nt2)*self.matrix_generation.dt,self.matrix_generation.nlay*self.solution.nt+self.solution.nt1+self.solution.nt2+1)
-        fig = plt.figure()
+        self.t = np.linspace(0,(self.matrix_generation.nlay*self.solution.nt+self.solution.nt1+self.solution.nt2+self.solution.nt3)*self.matrix_generation.dt,self.matrix_generation.nlay*self.solution.nt+self.solution.nt1+self.solution.nt2+self.solution.nt3+1)
+        fig = plt.figure(figsize=(12,6))
         axes = fig.add_subplot(1,1,1)
         axes.plot(self.t,self.solution.Ttot[0,:],label='Bed')
         for i in range (self.matrix_generation.nlay):
             for j in range (1,self.matrix_generation.nx+1):
-                axes.plot(self.t[(i*self.solution.nt+1):],self.solution.Ttot[i*self.matrix_generation.nx+j,(i*self.solution.nt+1):],label='Layer '+str(i+1)+' Point '+str(j))
+                axes.plot(self.t[(i*self.solution.nt):],self.solution.Ttot[i*self.matrix_generation.nx+j,(i*self.solution.nt):],label='Layer '+str(i+1)+' Point '+str(j))
         axes.set_xlabel("Time (s)",fontsize=16)
         axes.set_ylabel("Temperature (K)",fontsize=16)
         axes.set_title("Evolution of the temperature of the layers")
