@@ -6,4 +6,5 @@ from .solve import *
 from .draw_temperature import *
 from .calculate_deformation import *
 from .draw_deformation import *
-
+from .calculate_flow import *
+from .draw_flow import *
