@@ -19,6 +19,10 @@ solution = Solution(deck, matrix_generation, initial_conditions, boundary_condit
 
 graph_temperature = Graph_Temperature(matrix_generation, boundary_conditions, solution)
 
+flow_calculation = Flow_Calculation(matrix_generation, boundary_conditions, solution)
+
+graph_flow = Graph_Flow(flow_calculation, graph_temperature)
+
 #deformation_calculation = Deformation_Calculation(deck, matrix_generation, initial_conditions, solution)
 
 #graph_deformation = Graph_Deformation(matrix_generation, solution, deformation_calculation)
