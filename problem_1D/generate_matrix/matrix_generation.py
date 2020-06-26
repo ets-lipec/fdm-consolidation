@@ -10,7 +10,7 @@ class Matrix_Generation:
     def initialise_variables(self):
         
         self.lenX = float(self.deck.doc["Experimental Conditions"]["Layer Thickness"])
-        self.nx =  int(self.deck.doc["Simulation"]["number of intervals per layer"])             
+        self.nx =  int(self.deck.doc["Simulation"]["Number of intervals per layer"])             
         self.dx = self.lenX/self.nx
         self.k =  float(self.deck.doc["Materials"]["Thermal"]["Thermal Conductivity"])
         self.rho = float(self.deck.doc["Materials"]["Mechanical"]["Density"])
