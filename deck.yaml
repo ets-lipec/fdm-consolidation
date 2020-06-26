@@ -15,10 +15,11 @@ Experimental Conditions:
   Number of Layers: 3
 
 Simulation:
-  number of intervals per layer: 2
-  time per layer: 20
-  Vcooling: 5
-  time2: 10
+  Number of intervals per layer: 2
+  Time per layer: 20
+  Vcooling: 0.5
+  Time before cooling: 60
+  Time after cooling: 60
 
 Plot:
   Color Interpolation: 50
