@@ -23,6 +23,10 @@ flow_calculation = Flow_Calculation(matrix_generation, boundary_conditions, solu
 
 graph_flow = Graph_Flow(flow_calculation, graph_temperature)
 
+healing_calculation = Healing_Calculation(solution, matrix_generation)
+
+graph_healing = Graph_Healing(healing_calculation, graph_temperature, matrix_generation, solution)
+
 #deformation_calculation = Deformation_Calculation(deck, matrix_generation, initial_conditions, solution)
 
 #graph_deformation = Graph_Deformation(matrix_generation, solution, deformation_calculation)
