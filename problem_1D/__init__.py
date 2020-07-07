@@ -8,3 +8,5 @@ from .calculate_deformation import *
 from .draw_deformation import *
 from .calculate_flow import *
 from .draw_flow import *
+from .calculate_healing import *
+from .draw_healing import *
