@@ -19,7 +19,7 @@ healing = Healing(temperature, matrix_generation)
 
 graph = Graph(matrix_generation, temperature, flow, healing)
 
-# animation = Animation(deck, matrix_generation, temperature)
+animation = Animation(deck, matrix_generation, temperature)
 
 #deformation_calculation = Deformation_Calculation(deck, matrix_generation, initial_conditions, solution)
 
