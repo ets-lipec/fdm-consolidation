@@ -15,12 +15,15 @@ Experimental Conditions:
   Number of Layers: 3
 
 Simulation:
-  Number of intervals per layer: 2
+  Number of intervals per layer: 4
   Time per layer: 20
   Vcooling: 0.5
   Time before cooling: 60
   Time after cooling: 60
 
+Animation:
+  Color Map: 'plasma'
+  Time Interval: 5
 Plot:
   Color Interpolation: 50
   Color Map: "inferno"
