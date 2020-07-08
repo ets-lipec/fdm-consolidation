@@ -11,13 +11,15 @@ deck = Deck(cwd + "/deck.yaml")
 
 matrix_generation = Matrix_Generation(deck)
 
-boundary_conditions = Boundary_Conditions(deck,matrix_generation)
+temperature = Temperature(deck, matrix_generation)
 
-initial_conditions = Initial_Conditions(deck, matrix_generation)
+flow = Flow(matrix_generation, temperature)
 
-solution = Solution(deck, matrix_generation, initial_conditions, boundary_conditions)
+healing = Healing(temperature, matrix_generation)
 
-graph_temperature = Graph_Temperature(matrix_generation, boundary_conditions, solution)
+graph = Graph(matrix_generation, temperature, flow, healing)
+
+animation = Animation(deck, matrix_generation, temperature)
 
 #deformation_calculation = Deformation_Calculation(deck, matrix_generation, initial_conditions, solution)
 
