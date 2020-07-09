@@ -60,7 +60,7 @@ class Matrix_Generation:
     def initialise_vector_temperature(self):
         
         self.Textrusion = float(self.deck.doc["Experimental Conditions"]["Extrusion Temperature"])
-        self.T = np.zeros((self.nxlay,1))
+        self.T = np.ones((self.nxlay,1))*self.Troom
         self.T[:self.nx+1] = self.Textrusion
         self.Tbed = float(self.deck.doc["Experimental Conditions"]["Bed Temperature"])
         self.T[0] = self.Tbed
