@@ -1,7 +1,5 @@
-yaml
-os.path
+pyyaml
 numpy
-math
 matplotlib.pyplot
 PIL
 glob
