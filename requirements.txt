@@ -1,5 +1,4 @@
 pyyaml
 numpy
-matplotlib.pyplot
-PIL
-glob
+matplotlib
+Pillow
