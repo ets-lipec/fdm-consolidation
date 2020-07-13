@@ -1,9 +1,5 @@
 from problem_1D import *
-import os, sys
-import glob
-import matplotlib.pyplot as plt
-import pdb
-from PIL import Image
+
 
 cwd = os.getcwd()
 
