@@ -24,6 +24,3 @@ Simulation:
 Animation:
   Color Map: 'plasma'
   Time Interval: 5
-Plot:
-  Color Interpolation: 50
-  Color Map: "inferno"

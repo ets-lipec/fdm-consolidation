@@ -60,12 +60,12 @@ class Healing:
     
     def multiple_layers(self):
         
-        self.Mheal = self.do_calculation(1,2)
+        self.Mheal = self.do_calculation3(1,2)
         for i in range (2,self.matrix_generation.nlay):
             if i==2:
-                self.Mheal = np.append([self.Mheal],[self.do_calculation(i,i+1)],axis=0)
+                self.Mheal = np.append([self.Mheal],[self.do_calculation3(i,i+1)],axis=0)
             else:
-                self.Mheal = np.append(self.Mheal,[self.do_calculation(i,i+1)],axis=0)
+                self.Mheal = np.append(self.Mheal,[self.do_calculation3(i,i+1)],axis=0)
         
     def time_complete_healing(self):
         

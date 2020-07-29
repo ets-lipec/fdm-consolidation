@@ -17,6 +17,8 @@ graph = Graph(matrix_generation, temperature, flow, healing)
 
 animation = Animation(deck, matrix_generation, temperature)
 
+stability = Stability(matrix_generation, temperature)
+
 #deformation_calculation = Deformation_Calculation(deck, matrix_generation, initial_conditions, solution)
 
 #graph_deformation = Graph_Deformation(matrix_generation, solution, deformation_calculation)
