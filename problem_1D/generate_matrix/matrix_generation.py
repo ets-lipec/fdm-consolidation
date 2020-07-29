@@ -16,7 +16,7 @@ class Matrix_Generation:
         self.rho = float(self.deck.doc["Materials"]["Mechanical"]["Density"])
         self.Cp = float(self.deck.doc["Materials"]["Thermal"]["Heat Capacity"])
         self.D = self.k/(self.rho*self.Cp)
-        self.dt = float(self.rho*self.Cp*self.dx**2/(2*self.k*10))              
+        self.dt = float(self.rho*self.Cp*self.dx**2/(2*self.k*2))    
         self.C1=self.dt*self.D/self.dx**2
         self.nlay = int(self.deck.doc["Experimental Conditions"]["Number of Layers"])
 
